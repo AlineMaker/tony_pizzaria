@@ -10,11 +10,15 @@ a {
 ul,ol,li {
     list-style: none;
 }
+body{
+    padding: 0 80px;
+}
 
 header {
     height: 60px;
-    width: 100%;
-    position: absolute;
+    width: calc(100% - 160px);
+    position: fixed;
+    top: 60px;
     background-color: rgb(11, 159, 208);
 }
 main {
