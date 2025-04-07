@@ -1,12 +1,27 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
-ul,ol,li{
-list-style: none;
+ul,ol,li {
+    list-style: none;
+}
+
+header {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    background-color: rgb(11, 159, 208);
+}
+main {
+    height: 700px;
+    background-color: plum;
+}
+footer {
+    height: 526px;
+    background-color: tomato;
 }
