@@ -7,12 +7,17 @@ Landing page criada com base no layout Figma do projeto Tony Pizzaria. O foco fo
 # Screenshot
 
 DesKtop-1440
+
 ![](./img/dektop-1440.png)
 
+
 Tablet-768
+
 ![](./img/tablet-768.png)
 
+
 Phone-320
+
 ![](./img/phone-320.png)
 
 [Aline Alves de Souza](www.linkedin.com/in/aline-alves-engenheira)
