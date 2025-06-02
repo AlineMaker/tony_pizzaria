@@ -1,63 +1,503 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
-ul,ol,li {
-    list-style: none;
+
+ul,
+ol,
+li {
+  list-style: none;
 }
-:root{
-    --primary-color : #F07807;
-    --secundary-color: #FBDDC1;
-    --default-shadow: 0 4px 6px #0004;
+
+:root {
+  --primary-color: #f07807;
+  --secundary-color: #fbddc1;
+  --default-shadow: 0 4px 6px #0004;
+  --default-padding: 0 80px;
 }
-body{
-    padding: 0 80px;
-    font-family: "Poppins", sans-serif;
-    
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secundary-color);
 }
 
 header {
-    height: 60px;
-    width: calc(100% - 160px);
-    position: fixed;
-    top: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 60px;
+  width: 100%;
+  top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--default-padding);
+  z-index: 999;
 }
-header menu{
-    display: flex;
-    align-items: center;
-    gap: 48px;
-}
-header li{
 
-    padding: 4px 8px;
-    transition: .5s;
-   
+header menu {
+  display: flex;
+  align-items: center;
+  gap: 48px;
 }
-header li:hover{
-    background-color: var(--secundary-color);
-    box-shadow: var(--default-shadow)
+
+header li {
+  padding: 4px 8px;
+  transition: 0.5s;
 }
-header button{
-    height: 48px;
-    width: 120px;
-    background-color: var(--secundary-color);
-    border: none;
-    border-radius: 12px;
-    box-shadow: var(--default-shadow);
+
+header li:hover {
+  background-color: var(--secundary-color);
+  box-shadow: var(--default-shadow);
 }
-main {
-    height: 700px;
-    background-color: plum;
+
+header button {
+  height: 48px;
+  width: 120px;
+  background-color: var(--secundary-color);
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--default-shadow);
 }
+
+section {
+  height: 100vh;
+  padding: var(--default-padding);
+}
+
+.home {
+  background-image: url(./img/bg-home.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: contain;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 64px;
+}
+
+.hero h2 {
+  width: 558px;
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 64px;
+}
+
+.hero span {
+  color: var(--primary-color);
+}
+
+.container-produtos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.produto {
+  position: relative;
+  display: flex;
+  border-radius: 12px;
+}
+
+.adicionar {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  display: grid;
+  place-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: var(--primary-color);
+  border: 4px solid white;
+  border-radius: 13px;
+  font-size: 32px;
+  color: white;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.produto:hover .adicionar {
+  opacity: 1;
+}
+
+.animacao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.container-info {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  bottom: -36px;
+  width: 100%;
+  height: 36px;
+  background-color: #0008;
+  border-radius: 0 0 12px 12px;
+  transition: 0.5s;
+}
+
+.produto:hover .container-info {
+  bottom: 0;
+}
+
+.container-info p {
+  width: 120px;
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
+}
+
+.container-info span {
+  display: grid;
+  place-content: center;
+  width: 57px;
+  height: 20px;
+  background-color: var(--primary-color);
+  font-size: 12px;
+  border-radius: 4px;
+  color: white;
+}
+
+.cardapio {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.titulo-secao {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.titulo-secao h3 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.cardapio-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 260px;
+  border-bottom: 2px solid var(--secundary-color);
+}
+
+.cabecalho-item {
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary-color);
+}
+
+.cabecalho-item h4,
+.cabecalho-item a {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.cardapio-item.bebidas {
+  border: none;
+}
+
+.cardapio-item.bebidas .produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  padding: 16px;
+  transition: 0.5s;
+}
+
+.cardapio-item.bebidas .produto:hover {
+  box-shadow: 2px 2px 8px #bbb;
+}
+
+.cardapio-item.bebidas .valor {
+  font-size: 1rem;
+  color: var(--primary-color);
+  width: 100%;
+}
+
+.cardapio-item.bebidas .descricao {
+  font-size: 0.5rem;
+  width: 100%;
+}
+
+.servicos {
+  height: auto;
+  background-color: var(--secundary-color);
+  display: flex;
+  padding-block: 64px;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.servico-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.servico-card {
+  width: 400px;
+  height: 500px;
+  border: 2px solid var(--primary-color);
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.servico-card img {
+  /* Cria sombra em áreas visiveis */
+  filter: drop-shadow(var(--default-shadow));
+}
+
+.servico-card h4 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-shadow: var(--default-shadow);
+}
+
+.servico-card p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: var(--default-shadow);
+}
+
 footer {
-    height: 526px;
-    background-color: tomato;
+  height: 525px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fafafa;
+  align-items: center;
+}
+
+/*  */
+
+.contatos-container {
+  display: flex;
+  flex-grow: 1;
+  width: 75%;
+  justify-content: space-between;
+}
+
+.contato-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 140px;
+  gap: 16px;
+}
+
+.contato-item menu {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  gap: 16px;
+}
+
+.contato-item li {
+  display: flex;
+  gap: 16px;
+}
+
+.social a {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid #fafafa;
+  display: grid;
+  place-content: center;
+  transition: 0.5s;
+}
+
+.social a:hover {
+  background-color: var(--secundary-color);
+  color: var(--primary-color);
+}
+
+.copyrigth {
+  height: 72px;
+  width: 100%;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  font-size: 0.7rem;
+  font-weight: 300;
+  font-style: italic;
+  border-top: 1px solid var(--secundary-color);
+}
+
+.contato-item logo {
+  justify-content: center;
+  padding-top: 0;
+}
+
+.contato-item h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  header {
+    position: absolute;
+    background-color: initial;
+  }
+  header menu {
+    height: 64px;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: var(--primary-color);
+    color: #fafafa;
+    justify-content: space-evenly;
+  }
+  .home {
+    grid-template-columns: none;
+  }
+  .home .container-produtos {
+    display: none;
+  }
+  .hero {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .container-produtos {
+    gap: 24px;
+  }
+  .produto {
+    width: 100%;
+  }
+  .produto img {
+    width: 100%;
+  }
+  .produto:nth-child(3),
+  .produto:nth-child(4) {
+    display: none;
+  }
+  .cardapio-item.bebidas .produto:nth-child(n + 4) {
+    display: none;
+  }
+  .cardapio-item.bebidas img {
+    width: auto;
+  }
+  .servico-item {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .servico-card {
+    width: 100%;
+    height: 260px;
+    flex-wrap: wrap;
+  }
+  .servico-card p {
+    width: 320px;
+  }
+  .contato-item.links {
+    display: none;
+  }
+  .contatos-container {
+    height: 400px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .social li {
+    justify-content: end;
+  }
+  .contato-item {
+    padding: 32px;
+  }
+  .copyrigth {
+    margin-bottom: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    background-image: url(/img/background-mobile.png);
+  }
+  header {
+    width: 100%;
+    position: fixed;
+    top: 1px;
+    padding: 0;
+  }
+  .hero img {
+    display: none;
+  }
+  .hero h2 {
+    font-size: 32px;
+    width: 287px;
+    height: 192px;
+    font-style: italic;
+    color: #fafafa;
+  }
+  .hero span {
+    background-color: #fafafa;
+  }
+  .cardapio {
+    padding: 0;
+  }
+  .cardapio h4 {
+    width: 100vw;
+  }
+  .cardapio a {
+    display: none;
+  }
+  .produto:nth-child(2),
+  .produto:nth-child(3),
+  .produto:nth-child(4) {
+    display: none;
+  }
+  .servicos {
+    padding: 0;
+  }
+  .servico-card {
+    flex-direction: column;
+    width: 313px;
+  }
+  .servico-card p {
+    display: none;
+  }
+  .contato-item.social menu {
+    flex-direction: row;
+  }
+  .cardapio-item.bebidas .produto:nth-child(n + 2) {
+    display: none;
+  }
+  .contatos-container {
+    flex-wrap: nowrap;
+    margin: 20px;
+  }
 }
